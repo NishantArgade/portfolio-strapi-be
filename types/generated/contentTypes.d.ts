@@ -926,6 +926,7 @@ export interface ApiSkillSetSkillSet extends Schema.CollectionType {
     singularName: 'skill-set';
     pluralName: 'skill-sets';
     displayName: 'skillSets';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -947,6 +948,7 @@ export interface ApiSkillSetSkillSet extends Schema.CollectionType {
       'manyToOne',
       'api::skill.skill'
     >;
+    logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
