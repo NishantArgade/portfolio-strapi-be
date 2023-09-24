@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * bio router
+ * skill-set router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::bio.bio');
+module.exports = createCoreRouter('api::skill-set.skill-set');

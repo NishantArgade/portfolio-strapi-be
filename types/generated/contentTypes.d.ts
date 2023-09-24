@@ -361,29 +361,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBioBio extends Schema.CollectionType {
-  collectionName: 'bios';
-  info: {
-    singularName: 'bio';
-    pluralName: 'bios';
-    displayName: 'bio';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::bio.bio', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::bio.bio', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -699,6 +676,295 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiEducationEducation extends Schema.CollectionType {
+  collectionName: 'educations';
+  info: {
+    singularName: 'education';
+    pluralName: 'educations';
+    displayName: 'Education';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    instituteName: Attribute.String & Attribute.Required;
+    qualificationDegree: Attribute.String & Attribute.Required;
+    startDate: Attribute.Date;
+    endDate: Attribute.Date;
+    percentageGrade: Attribute.String;
+    description: Attribute.Text;
+    instituteLogo: Attribute.Media;
+    result: Attribute.Media;
+    resultIcon: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::education.education',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::education.education',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiExperienceExperience extends Schema.CollectionType {
+  collectionName: 'experiences';
+  info: {
+    singularName: 'experience';
+    pluralName: 'experiences';
+    displayName: 'experience';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Attribute.String;
+    description: Attribute.Text;
+    fromDate: Attribute.Date;
+    toDate: Attribute.Date;
+    campanyLogo: Attribute.Media;
+    certificate: Attribute.Media;
+    docIcon: Attribute.Media;
+    skillset: Attribute.Relation<
+      'api::experience.experience',
+      'oneToMany',
+      'api::skill-set.skill-set'
+    >;
+    role: Attribute.Relation<
+      'api::experience.experience',
+      'oneToOne',
+      'api::my-role.my-role'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::experience.experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::experience.experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMyBioMyBio extends Schema.SingleType {
+  collectionName: 'my_bios';
+  info: {
+    singularName: 'my-bio';
+    pluralName: 'my-bios';
+    displayName: 'MyBio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fullName: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Nishant Argade'>;
+    bioHeading: Attribute.Text;
+    githubLink: Attribute.String;
+    linkedinLink: Attribute.String;
+    instagramLink: Attribute.String;
+    whatsappLink: Attribute.String;
+    gmail: Attribute.String;
+    skillPageHeading: Attribute.String;
+    experiencePageHeading: Attribute.String;
+    educationPageHeading: Attribute.String;
+    contactPageHeading: Attribute.String;
+    phone: Attribute.String;
+    projectsPageHeading: Attribute.String;
+    resumePDF: Attribute.Media;
+    myPhoto: Attribute.Media;
+    myLogo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::my-bio.my-bio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::my-bio.my-bio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMyRoleMyRole extends Schema.CollectionType {
+  collectionName: 'my_roles';
+  info: {
+    singularName: 'my-role';
+    pluralName: 'my-roles';
+    displayName: 'myRoles';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::my-role.my-role',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::my-role.my-role',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Projects';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    githubLink: Attribute.String;
+    projectLink: Attribute.String;
+    preference: Attribute.Integer &
+      Attribute.SetMinMax<{
+        max: 1;
+      }> &
+      Attribute.DefaultTo<1>;
+    image: Attribute.Media;
+    skill_sets: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::skill-set.skill-set'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSkillSkill extends Schema.CollectionType {
+  collectionName: 'skills';
+  info: {
+    singularName: 'skill';
+    pluralName: 'skills';
+    displayName: 'Skills';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    skillName: Attribute.String;
+    skill_sets: Attribute.Relation<
+      'api::skill.skill',
+      'oneToMany',
+      'api::skill-set.skill-set'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::skill.skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::skill.skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSkillSetSkillSet extends Schema.CollectionType {
+  collectionName: 'skill_sets';
+  info: {
+    singularName: 'skill-set';
+    pluralName: 'skill-sets';
+    displayName: 'skillSets';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    experience: Attribute.Relation<
+      'api::skill-set.skill-set',
+      'manyToOne',
+      'api::experience.experience'
+    >;
+    project: Attribute.Relation<
+      'api::skill-set.skill-set',
+      'manyToOne',
+      'api::project.project'
+    >;
+    skill: Attribute.Relation<
+      'api::skill-set.skill-set',
+      'manyToOne',
+      'api::skill.skill'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::skill-set.skill-set',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::skill-set.skill-set',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -709,13 +975,19 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::bio.bio': ApiBioBio;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::education.education': ApiEducationEducation;
+      'api::experience.experience': ApiExperienceExperience;
+      'api::my-bio.my-bio': ApiMyBioMyBio;
+      'api::my-role.my-role': ApiMyRoleMyRole;
+      'api::project.project': ApiProjectProject;
+      'api::skill.skill': ApiSkillSkill;
+      'api::skill-set.skill-set': ApiSkillSetSkillSet;
     }
   }
 }

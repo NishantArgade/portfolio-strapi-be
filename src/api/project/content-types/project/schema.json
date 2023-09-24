@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Projects",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "githubLink": {
+      "type": "string"
+    },
+    "projectLink": {
+      "type": "string"
+    },
+    "preference": {
+      "type": "integer",
+      "default": 1,
+      "required": false,
+      "unique": false,
+      "max": 1
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "skill_sets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill-set.skill-set",
+      "mappedBy": "project"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_bios",
+  "info": {
+    "singularName": "my-bio",
+    "pluralName": "my-bios",
+    "displayName": "MyBio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "default": "Nishant Argade",
+      "required": true
+    },
+    "bioHeading": {
+      "type": "text"
+    },
+    "githubLink": {
+      "type": "string"
+    },
+    "linkedinLink": {
+      "type": "string"
+    },
+    "instagramLink": {
+      "type": "string"
+    },
+    "whatsappLink": {
+      "type": "string"
+    },
+    "gmail": {
+      "type": "string"
+    },
+    "skillPageHeading": {
+      "type": "string"
+    },
+    "experiencePageHeading": {
+      "type": "string"
+    },
+    "educationPageHeading": {
+      "type": "string"
+    },
+    "contactPageHeading": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "projectsPageHeading": {
+      "type": "string"
+    },
+    "resumePDF": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "myPhoto": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "myLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

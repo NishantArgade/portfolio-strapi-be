@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * bio service
+ * my-bio service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::bio.bio');
+module.exports = createCoreService('api::my-bio.my-bio');

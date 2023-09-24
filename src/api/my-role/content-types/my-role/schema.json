@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_roles",
+  "info": {
+    "singularName": "my-role",
+    "pluralName": "my-roles",
+    "displayName": "myRoles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

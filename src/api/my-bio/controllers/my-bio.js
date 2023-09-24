@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * bio controller
+ * my-bio controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::bio.bio');
+module.exports = createCoreController('api::my-bio.my-bio');
