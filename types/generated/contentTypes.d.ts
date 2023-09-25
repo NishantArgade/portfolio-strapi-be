@@ -768,6 +768,7 @@ export interface ApiMyBioMyBio extends Schema.SingleType {
     singularName: 'my-bio';
     pluralName: 'my-bios';
     displayName: 'MyBio';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -791,6 +792,11 @@ export interface ApiMyBioMyBio extends Schema.SingleType {
     resumePDF: Attribute.Media;
     myPhoto: Attribute.Media;
     myLogo: Attribute.Media;
+    my_roles: Attribute.Relation<
+      'api::my-bio.my-bio',
+      'oneToMany',
+      'api::my-role.my-role'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
