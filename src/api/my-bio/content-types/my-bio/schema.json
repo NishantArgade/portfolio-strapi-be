@@ -4,7 +4,8 @@
   "info": {
     "singularName": "my-bio",
     "pluralName": "my-bios",
-    "displayName": "MyBio"
+    "displayName": "MyBio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -53,34 +54,42 @@
       "type": "string"
     },
     "resumePDF": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "myPhoto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "myLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "my_roles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::my-role.my-role"
     }
   }
 }

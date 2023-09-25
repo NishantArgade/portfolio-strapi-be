@@ -29,7 +29,8 @@
       "default": 1,
       "required": false,
       "unique": false,
-      "max": 1
+      "max": 5,
+      "min": 1
     },
     "image": {
       "type": "media",
@@ -47,6 +48,12 @@
       "relation": "oneToMany",
       "target": "api::skill-set.skill-set",
       "mappedBy": "project"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
     }
   }
 }

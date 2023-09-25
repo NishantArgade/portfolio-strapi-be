@@ -857,7 +857,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
     projectLink: Attribute.String;
     preference: Attribute.Integer &
       Attribute.SetMinMax<{
-        max: 1;
+        min: 1;
+        max: 5;
       }> &
       Attribute.DefaultTo<1>;
     image: Attribute.Media;
@@ -866,6 +867,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToMany',
       'api::skill-set.skill-set'
     >;
+    startDate: Attribute.Date;
+    endDate: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
