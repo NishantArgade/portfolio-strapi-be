@@ -820,7 +820,8 @@ export interface ApiMyRoleMyRole extends Schema.CollectionType {
   info: {
     singularName: 'my-role';
     pluralName: 'my-roles';
-    displayName: 'myRoles';
+    displayName: 'MyRoles';
+    description: '';
   };
   options: {
     draftAndPublish: true;
