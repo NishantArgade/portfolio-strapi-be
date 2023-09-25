@@ -731,7 +731,7 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
     description: Attribute.Text;
     fromDate: Attribute.Date;
     toDate: Attribute.Date;
-    campanyLogo: Attribute.Media;
+    companyLogo: Attribute.Media;
     certificate: Attribute.Media;
     docIcon: Attribute.Media;
     skillset: Attribute.Relation<

@@ -24,7 +24,7 @@
     "toDate": {
       "type": "date"
     },
-    "campanyLogo": {
+    "companyLogo": {
       "type": "media",
       "multiple": false,
       "required": false,
